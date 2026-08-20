@@ -1,0 +1,8 @@
+name: aiox-plan
+description: 'Planejamento AIOX: análise, produto e arquitetura'
+skills:
+- aiox-agent-analyst
+- aiox-agent-pm
+- aiox-agent-architect
+instruction: 'Planeje antes de editar: produza requisitos, riscos e arquitetura; aguarde
+  autorização para implementar.'

@@ -1,0 +1,7 @@
+name: aiox-build
+description: Implementação AIOX com desenvolvimento e QA
+skills:
+- aiox-agent-dev
+- aiox-agent-qa
+instruction: Implemente com testes, valide o diff e não finalize sem evidência de
+  QA.

@@ -1,0 +1,1042 @@
+{
+  "aiox_version": "5.4.1",
+  "roles": [
+    {
+      "id": "aiox-master",
+      "file": "aiox-master.md",
+      "skill": "aiox-agent-aiox-master",
+      "display": "Orion",
+      "title": "AIOX Master Orchestrator & Framework Developer",
+      "when": "Use when you need comprehensive expertise across all domains, framework component creation/modification, workflow orchestration, or running tasks that don't require a specialized persona."
+    },
+    {
+      "id": "analyst",
+      "file": "analyst.md",
+      "skill": "aiox-agent-analyst",
+      "display": "Atlas",
+      "title": "Business Analyst",
+      "when": "Use for market research, competitive analysis, user research, brainstorming session facilitation, structured ideation workshops, feasibility studies, industry trends analysis, project discovery (brownfield documentation), and research report creation.\n\nNOT for: PRD creation or product strategy → Use @pm. Technical architecture decisions or technology selection → Use @architect. Story creation or sprint planning → Use @sm.\n"
+    },
+    {
+      "id": "architect",
+      "file": "architect.md",
+      "skill": "aiox-agent-architect",
+      "display": "Aria",
+      "title": "Architect",
+      "when": "Use for system architecture (fullstack, backend, frontend, infrastructure), technology stack selection (technical evaluation), API design (REST/GraphQL/tRPC/WebSocket), security architecture, performance optimization, deployment strategy, and cross-cutting concerns (logging, monitoring, error handling).\n\nNOT for: Market research or competitive analysis → Use @analyst. PRD creation or product strategy → Use @pm. Database schema design or query optimization → Use @data-engineer.\n"
+    },
+    {
+      "id": "data-engineer",
+      "file": "data-engineer.md",
+      "skill": "aiox-agent-data-engineer",
+      "display": "Dara",
+      "title": "Database Architect & Operations Engineer",
+      "when": "Use for database design, schema architecture, Supabase configuration, RLS policies, migrations, query optimization, data modeling, operations, and monitoring"
+    },
+    {
+      "id": "dev",
+      "file": "dev.md",
+      "skill": "aiox-agent-dev",
+      "display": "Dex",
+      "title": "Full Stack Developer",
+      "when": "Use for code implementation, debugging, refactoring, and development best practices"
+    },
+    {
+      "id": "devops",
+      "file": "devops.md",
+      "skill": "aiox-agent-devops",
+      "display": "Gage",
+      "title": "GitHub Repository Manager & DevOps Specialist",
+      "when": "Use for repository operations, version management, CI/CD, quality gates, and GitHub push operations. ONLY agent authorized to push to remote repository."
+    },
+    {
+      "id": "pm",
+      "file": "pm.md",
+      "skill": "aiox-agent-pm",
+      "display": "Morgan",
+      "title": "Product Manager",
+      "when": "Use for PRD creation (greenfield and brownfield), epic creation and management, product strategy and vision, feature prioritization (MoSCoW, RICE), roadmap planning, business case development, go/no-go decisions, scope definition, success metrics, and stakeholder communication.\n\nEpic/Story Delegation (Gate 1 Decision): PM creates epic structure, then delegates story creation to @sm.\n\nNOT for: Market research or competitive analysis → Use @analyst. Technical architecture design or technology selection → Use @architect. Detailed user story creation → Use @sm (PM creates epics, SM creates stories). Implementation work → Use @dev.\n"
+    },
+    {
+      "id": "po",
+      "file": "po.md",
+      "skill": "aiox-agent-po",
+      "display": "Pax",
+      "title": "Product Owner",
+      "when": "Use for backlog management, story refinement, acceptance criteria, sprint planning, and prioritization decisions"
+    },
+    {
+      "id": "qa",
+      "file": "qa.md",
+      "skill": "aiox-agent-qa",
+      "display": "Quinn",
+      "title": "Test Architect & Quality Advisor",
+      "when": "Use for comprehensive test architecture review, quality gate decisions, and code improvement. Provides thorough analysis including requirements traceability, risk assessment, and test strategy. Advisory only - teams choose their quality bar."
+    },
+    {
+      "id": "sm",
+      "file": "sm.md",
+      "skill": "aiox-agent-sm",
+      "display": "River",
+      "title": "Scrum Master",
+      "when": "Use for user story creation from PRD, story validation and completeness checking, acceptance criteria definition, story refinement, sprint planning, backlog grooming, retrospectives, daily standup facilitation, and local branch management (create/switch/list/delete local branches, local merges).\n\nEpic/Story Delegation (Gate 1 Decision): PM creates epic structure, SM creates detailed user stories from that epic.\n\nNOT for: PRD creation or epic structure → Use @pm. Market research or competitive analysis → Use @analyst. Technical architecture design → Use @architect. Implementation work → Use @dev. Remote Git operations (push, create PR, merge PR, delete remote branches) → Use @github-devops.\n"
+    },
+    {
+      "id": "squad-creator",
+      "file": "squad-creator.md",
+      "skill": "aiox-agent-squad-creator",
+      "display": "Craft",
+      "title": "Squad Creator",
+      "when": "Use to create, validate, publish and manage squads"
+    },
+    {
+      "id": "ux-design-expert",
+      "file": "ux-design-expert.md",
+      "skill": "aiox-agent-ux-design-expert",
+      "display": "Uma",
+      "title": "UX/UI Designer & Design System Architect",
+      "when": "Complete design workflow - user research, wireframes, design systems, token extraction, component building, and quality assurance"
+    }
+  ],
+  "tasks": [
+    {
+      "source": "add-mcp.md",
+      "skill": "aiox-task-add-mcp"
+    },
+    {
+      "source": "advanced-elicitation.md",
+      "skill": "aiox-task-advanced-elicitation"
+    },
+    {
+      "source": "analyst-facilitate-brainstorming.md",
+      "skill": "aiox-task-analyst-facilitate-brainstorming"
+    },
+    {
+      "source": "analyze-brownfield.md",
+      "skill": "aiox-task-analyze-brownfield"
+    },
+    {
+      "source": "analyze-cross-artifact.md",
+      "skill": "aiox-task-analyze-cross-artifact"
+    },
+    {
+      "source": "analyze-framework.md",
+      "skill": "aiox-task-analyze-framework"
+    },
+    {
+      "source": "analyze-performance.md",
+      "skill": "aiox-task-analyze-performance"
+    },
+    {
+      "source": "analyze-project-structure.md",
+      "skill": "aiox-task-analyze-project-structure"
+    },
+    {
+      "source": "apply-qa-fixes.md",
+      "skill": "aiox-task-apply-qa-fixes"
+    },
+    {
+      "source": "architect-analyze-impact.md",
+      "skill": "aiox-task-architect-analyze-impact"
+    },
+    {
+      "source": "audit-codebase.md",
+      "skill": "aiox-task-audit-codebase"
+    },
+    {
+      "source": "audit-tailwind-config.md",
+      "skill": "aiox-task-audit-tailwind-config"
+    },
+    {
+      "source": "audit-utilities.md",
+      "skill": "aiox-task-audit-utilities"
+    },
+    {
+      "source": "blocks/agent-prompt-template.md",
+      "skill": "aiox-task-blocks-agent-prompt-template"
+    },
+    {
+      "source": "blocks/context-loading.md",
+      "skill": "aiox-task-blocks-context-loading"
+    },
+    {
+      "source": "blocks/execution-pattern.md",
+      "skill": "aiox-task-blocks-execution-pattern"
+    },
+    {
+      "source": "blocks/finalization.md",
+      "skill": "aiox-task-blocks-finalization"
+    },
+    {
+      "source": "blocks/README.md",
+      "skill": "aiox-task-blocks-readme"
+    },
+    {
+      "source": "bootstrap-shadcn-library.md",
+      "skill": "aiox-task-bootstrap-shadcn-library"
+    },
+    {
+      "source": "brownfield-create-epic.md",
+      "skill": "aiox-task-brownfield-create-epic"
+    },
+    {
+      "source": "brownfield-create-story.md",
+      "skill": "aiox-task-brownfield-create-story"
+    },
+    {
+      "source": "build-autonomous.md",
+      "skill": "aiox-task-build-autonomous"
+    },
+    {
+      "source": "build-component.md",
+      "skill": "aiox-task-build-component"
+    },
+    {
+      "source": "build-resume.md",
+      "skill": "aiox-task-build-resume"
+    },
+    {
+      "source": "build-status.md",
+      "skill": "aiox-task-build-status"
+    },
+    {
+      "source": "build.md",
+      "skill": "aiox-task-build"
+    },
+    {
+      "source": "calculate-roi.md",
+      "skill": "aiox-task-calculate-roi"
+    },
+    {
+      "source": "check-docs-links.md",
+      "skill": "aiox-task-check-docs-links"
+    },
+    {
+      "source": "ci-cd-configuration.md",
+      "skill": "aiox-task-ci-cd-configuration"
+    },
+    {
+      "source": "cleanup-utilities.md",
+      "skill": "aiox-task-cleanup-utilities"
+    },
+    {
+      "source": "cleanup-worktrees.md",
+      "skill": "aiox-task-cleanup-worktrees"
+    },
+    {
+      "source": "collaborative-edit.md",
+      "skill": "aiox-task-collaborative-edit"
+    },
+    {
+      "source": "compose-molecule.md",
+      "skill": "aiox-task-compose-molecule"
+    },
+    {
+      "source": "consolidate-patterns.md",
+      "skill": "aiox-task-consolidate-patterns"
+    },
+    {
+      "source": "correct-course.md",
+      "skill": "aiox-task-correct-course"
+    },
+    {
+      "source": "create-agent.md",
+      "skill": "aiox-task-create-agent"
+    },
+    {
+      "source": "create-brownfield-story.md",
+      "skill": "aiox-task-create-brownfield-story"
+    },
+    {
+      "source": "create-deep-research-prompt.md",
+      "skill": "aiox-task-create-deep-research-prompt"
+    },
+    {
+      "source": "create-doc.md",
+      "skill": "aiox-task-create-doc"
+    },
+    {
+      "source": "create-next-story.md",
+      "skill": "aiox-task-create-next-story"
+    },
+    {
+      "source": "create-service.md",
+      "skill": "aiox-task-create-service"
+    },
+    {
+      "source": "create-suite.md",
+      "skill": "aiox-task-create-suite"
+    },
+    {
+      "source": "create-task.md",
+      "skill": "aiox-task-create-task"
+    },
+    {
+      "source": "create-workflow.md",
+      "skill": "aiox-task-create-workflow"
+    },
+    {
+      "source": "create-worktree.md",
+      "skill": "aiox-task-create-worktree"
+    },
+    {
+      "source": "db-analyze-hotpaths.md",
+      "skill": "aiox-task-db-analyze-hotpaths"
+    },
+    {
+      "source": "db-apply-migration.md",
+      "skill": "aiox-task-db-apply-migration"
+    },
+    {
+      "source": "db-bootstrap.md",
+      "skill": "aiox-task-db-bootstrap"
+    },
+    {
+      "source": "db-domain-modeling.md",
+      "skill": "aiox-task-db-domain-modeling"
+    },
+    {
+      "source": "db-dry-run.md",
+      "skill": "aiox-task-db-dry-run"
+    },
+    {
+      "source": "db-env-check.md",
+      "skill": "aiox-task-db-env-check"
+    },
+    {
+      "source": "db-explain.md",
+      "skill": "aiox-task-db-explain"
+    },
+    {
+      "source": "db-impersonate.md",
+      "skill": "aiox-task-db-impersonate"
+    },
+    {
+      "source": "db-load-csv.md",
+      "skill": "aiox-task-db-load-csv"
+    },
+    {
+      "source": "db-policy-apply.md",
+      "skill": "aiox-task-db-policy-apply"
+    },
+    {
+      "source": "db-rls-audit.md",
+      "skill": "aiox-task-db-rls-audit"
+    },
+    {
+      "source": "db-rollback.md",
+      "skill": "aiox-task-db-rollback"
+    },
+    {
+      "source": "db-run-sql.md",
+      "skill": "aiox-task-db-run-sql"
+    },
+    {
+      "source": "db-schema-audit.md",
+      "skill": "aiox-task-db-schema-audit"
+    },
+    {
+      "source": "db-seed.md",
+      "skill": "aiox-task-db-seed"
+    },
+    {
+      "source": "db-smoke-test.md",
+      "skill": "aiox-task-db-smoke-test"
+    },
+    {
+      "source": "db-snapshot.md",
+      "skill": "aiox-task-db-snapshot"
+    },
+    {
+      "source": "db-squad-integration.md",
+      "skill": "aiox-task-db-squad-integration"
+    },
+    {
+      "source": "db-supabase-setup.md",
+      "skill": "aiox-task-db-supabase-setup"
+    },
+    {
+      "source": "db-verify-order.md",
+      "skill": "aiox-task-db-verify-order"
+    },
+    {
+      "source": "delegate-to-external-executor.md",
+      "skill": "aiox-task-delegate-to-external-executor"
+    },
+    {
+      "source": "deprecate-component.md",
+      "skill": "aiox-task-deprecate-component"
+    },
+    {
+      "source": "dev-apply-qa-fixes.md",
+      "skill": "aiox-task-dev-apply-qa-fixes"
+    },
+    {
+      "source": "dev-backlog-debt.md",
+      "skill": "aiox-task-dev-backlog-debt"
+    },
+    {
+      "source": "dev-develop-story.md",
+      "skill": "aiox-task-dev-develop-story"
+    },
+    {
+      "source": "dev-improve-code-quality.md",
+      "skill": "aiox-task-dev-improve-code-quality"
+    },
+    {
+      "source": "dev-optimize-performance.md",
+      "skill": "aiox-task-dev-optimize-performance"
+    },
+    {
+      "source": "dev-suggest-refactoring.md",
+      "skill": "aiox-task-dev-suggest-refactoring"
+    },
+    {
+      "source": "dev-validate-next-story.md",
+      "skill": "aiox-task-dev-validate-next-story"
+    },
+    {
+      "source": "devops-pro-access-grant.md",
+      "skill": "aiox-task-devops-pro-access-grant"
+    },
+    {
+      "source": "devops-pro-activate.md",
+      "skill": "aiox-task-devops-pro-activate"
+    },
+    {
+      "source": "devops-pro-check-access.md",
+      "skill": "aiox-task-devops-pro-check-access"
+    },
+    {
+      "source": "devops-pro-request-reset.md",
+      "skill": "aiox-task-devops-pro-request-reset"
+    },
+    {
+      "source": "devops-pro-resend-verification.md",
+      "skill": "aiox-task-devops-pro-resend-verification"
+    },
+    {
+      "source": "devops-pro-reset-password.md",
+      "skill": "aiox-task-devops-pro-reset-password"
+    },
+    {
+      "source": "devops-pro-validate-login.md",
+      "skill": "aiox-task-devops-pro-validate-login"
+    },
+    {
+      "source": "devops-pro-verify-status.md",
+      "skill": "aiox-task-devops-pro-verify-status"
+    },
+    {
+      "source": "document-gotchas.md",
+      "skill": "aiox-task-document-gotchas"
+    },
+    {
+      "source": "document-project.md",
+      "skill": "aiox-task-document-project"
+    },
+    {
+      "source": "environment-bootstrap.md",
+      "skill": "aiox-task-environment-bootstrap"
+    },
+    {
+      "source": "execute-checklist.md",
+      "skill": "aiox-task-execute-checklist"
+    },
+    {
+      "source": "execute-epic-plan.md",
+      "skill": "aiox-task-execute-epic-plan"
+    },
+    {
+      "source": "export-design-tokens-dtcg.md",
+      "skill": "aiox-task-export-design-tokens-dtcg"
+    },
+    {
+      "source": "extend-pattern.md",
+      "skill": "aiox-task-extend-pattern"
+    },
+    {
+      "source": "extract-patterns.md",
+      "skill": "aiox-task-extract-patterns"
+    },
+    {
+      "source": "extract-tokens.md",
+      "skill": "aiox-task-extract-tokens"
+    },
+    {
+      "source": "facilitate-brainstorming-session.md",
+      "skill": "aiox-task-facilitate-brainstorming-session"
+    },
+    {
+      "source": "fast-path-gate.md",
+      "skill": "aiox-task-fast-path-gate"
+    },
+    {
+      "source": "generate-ai-frontend-prompt.md",
+      "skill": "aiox-task-generate-ai-frontend-prompt"
+    },
+    {
+      "source": "generate-documentation.md",
+      "skill": "aiox-task-generate-documentation"
+    },
+    {
+      "source": "generate-migration-strategy.md",
+      "skill": "aiox-task-generate-migration-strategy"
+    },
+    {
+      "source": "generate-shock-report.md",
+      "skill": "aiox-task-generate-shock-report"
+    },
+    {
+      "source": "github-devops-github-pr-automation.md",
+      "skill": "aiox-task-github-devops-github-pr-automation"
+    },
+    {
+      "source": "github-devops-pre-push-quality-gate.md",
+      "skill": "aiox-task-github-devops-pre-push-quality-gate"
+    },
+    {
+      "source": "github-devops-repository-cleanup.md",
+      "skill": "aiox-task-github-devops-repository-cleanup"
+    },
+    {
+      "source": "github-devops-version-management.md",
+      "skill": "aiox-task-github-devops-version-management"
+    },
+    {
+      "source": "github-issue-triage.md",
+      "skill": "aiox-task-github-issue-triage"
+    },
+    {
+      "source": "gotcha.md",
+      "skill": "aiox-task-gotcha"
+    },
+    {
+      "source": "gotchas.md",
+      "skill": "aiox-task-gotchas"
+    },
+    {
+      "source": "health-check.yaml",
+      "skill": "aiox-task-health-check"
+    },
+    {
+      "source": "ids-governor.md",
+      "skill": "aiox-task-ids-governor"
+    },
+    {
+      "source": "ids-health.md",
+      "skill": "aiox-task-ids-health"
+    },
+    {
+      "source": "ids-query.md",
+      "skill": "aiox-task-ids-query"
+    },
+    {
+      "source": "improve-self.md",
+      "skill": "aiox-task-improve-self"
+    },
+    {
+      "source": "index-docs.md",
+      "skill": "aiox-task-index-docs"
+    },
+    {
+      "source": "init-project-status.md",
+      "skill": "aiox-task-init-project-status"
+    },
+    {
+      "source": "integrate-squad.md",
+      "skill": "aiox-task-integrate-squad"
+    },
+    {
+      "source": "kb-mode-interaction.md",
+      "skill": "aiox-task-kb-mode-interaction"
+    },
+    {
+      "source": "learn-patterns.md",
+      "skill": "aiox-task-learn-patterns"
+    },
+    {
+      "source": "list-mcps.md",
+      "skill": "aiox-task-list-mcps"
+    },
+    {
+      "source": "list-worktrees.md",
+      "skill": "aiox-task-list-worktrees"
+    },
+    {
+      "source": "mcp-workflow.md",
+      "skill": "aiox-task-mcp-workflow"
+    },
+    {
+      "source": "merge-worktree.md",
+      "skill": "aiox-task-merge-worktree"
+    },
+    {
+      "source": "modify-agent.md",
+      "skill": "aiox-task-modify-agent"
+    },
+    {
+      "source": "modify-task.md",
+      "skill": "aiox-task-modify-task"
+    },
+    {
+      "source": "modify-workflow.md",
+      "skill": "aiox-task-modify-workflow"
+    },
+    {
+      "source": "next.md",
+      "skill": "aiox-task-next"
+    },
+    {
+      "source": "orchestrate-resume.md",
+      "skill": "aiox-task-orchestrate-resume"
+    },
+    {
+      "source": "orchestrate-status.md",
+      "skill": "aiox-task-orchestrate-status"
+    },
+    {
+      "source": "orchestrate-stop.md",
+      "skill": "aiox-task-orchestrate-stop"
+    },
+    {
+      "source": "orchestrate.md",
+      "skill": "aiox-task-orchestrate"
+    },
+    {
+      "source": "patterns.md",
+      "skill": "aiox-task-patterns"
+    },
+    {
+      "source": "plan-create-context.md",
+      "skill": "aiox-task-plan-create-context"
+    },
+    {
+      "source": "plan-create-implementation.md",
+      "skill": "aiox-task-plan-create-implementation"
+    },
+    {
+      "source": "plan-execute-subtask.md",
+      "skill": "aiox-task-plan-execute-subtask"
+    },
+    {
+      "source": "po-backlog-add.md",
+      "skill": "aiox-task-po-backlog-add"
+    },
+    {
+      "source": "po-close-story.md",
+      "skill": "aiox-task-po-close-story"
+    },
+    {
+      "source": "po-manage-story-backlog.md",
+      "skill": "aiox-task-po-manage-story-backlog"
+    },
+    {
+      "source": "po-pull-story-from-clickup.md",
+      "skill": "aiox-task-po-pull-story-from-clickup"
+    },
+    {
+      "source": "po-pull-story.md",
+      "skill": "aiox-task-po-pull-story"
+    },
+    {
+      "source": "po-stories-index.md",
+      "skill": "aiox-task-po-stories-index"
+    },
+    {
+      "source": "po-sync-story-to-clickup.md",
+      "skill": "aiox-task-po-sync-story-to-clickup"
+    },
+    {
+      "source": "po-sync-story.md",
+      "skill": "aiox-task-po-sync-story"
+    },
+    {
+      "source": "pr-automation.md",
+      "skill": "aiox-task-pr-automation"
+    },
+    {
+      "source": "project-status.md",
+      "skill": "aiox-task-project-status"
+    },
+    {
+      "source": "propose-modification.md",
+      "skill": "aiox-task-propose-modification"
+    },
+    {
+      "source": "publish-npm.md",
+      "skill": "aiox-task-publish-npm"
+    },
+    {
+      "source": "qa-after-creation.md",
+      "skill": "aiox-task-qa-after-creation"
+    },
+    {
+      "source": "qa-backlog-add-followup.md",
+      "skill": "aiox-task-qa-backlog-add-followup"
+    },
+    {
+      "source": "qa-browser-console-check.md",
+      "skill": "aiox-task-qa-browser-console-check"
+    },
+    {
+      "source": "qa-create-fix-request.md",
+      "skill": "aiox-task-qa-create-fix-request"
+    },
+    {
+      "source": "qa-evidence-requirements.md",
+      "skill": "aiox-task-qa-evidence-requirements"
+    },
+    {
+      "source": "qa-false-positive-detection.md",
+      "skill": "aiox-task-qa-false-positive-detection"
+    },
+    {
+      "source": "qa-fix-issues.md",
+      "skill": "aiox-task-qa-fix-issues"
+    },
+    {
+      "source": "qa-gate.md",
+      "skill": "aiox-task-qa-gate"
+    },
+    {
+      "source": "qa-generate-tests.md",
+      "skill": "aiox-task-qa-generate-tests"
+    },
+    {
+      "source": "qa-library-validation.md",
+      "skill": "aiox-task-qa-library-validation"
+    },
+    {
+      "source": "qa-migration-validation.md",
+      "skill": "aiox-task-qa-migration-validation"
+    },
+    {
+      "source": "qa-nfr-assess.md",
+      "skill": "aiox-task-qa-nfr-assess"
+    },
+    {
+      "source": "qa-review-build.md",
+      "skill": "aiox-task-qa-review-build"
+    },
+    {
+      "source": "qa-review-proposal.md",
+      "skill": "aiox-task-qa-review-proposal"
+    },
+    {
+      "source": "qa-review-story.md",
+      "skill": "aiox-task-qa-review-story"
+    },
+    {
+      "source": "qa-risk-profile.md",
+      "skill": "aiox-task-qa-risk-profile"
+    },
+    {
+      "source": "qa-run-tests.md",
+      "skill": "aiox-task-qa-run-tests"
+    },
+    {
+      "source": "qa-security-checklist.md",
+      "skill": "aiox-task-qa-security-checklist"
+    },
+    {
+      "source": "qa-test-design.md",
+      "skill": "aiox-task-qa-test-design"
+    },
+    {
+      "source": "qa-trace-requirements.md",
+      "skill": "aiox-task-qa-trace-requirements"
+    },
+    {
+      "source": "release-management.md",
+      "skill": "aiox-task-release-management"
+    },
+    {
+      "source": "remove-mcp.md",
+      "skill": "aiox-task-remove-mcp"
+    },
+    {
+      "source": "remove-worktree.md",
+      "skill": "aiox-task-remove-worktree"
+    },
+    {
+      "source": "resolve-github-issue.md",
+      "skill": "aiox-task-resolve-github-issue"
+    },
+    {
+      "source": "review-contributor-pr.md",
+      "skill": "aiox-task-review-contributor-pr"
+    },
+    {
+      "source": "run-design-system-pipeline.md",
+      "skill": "aiox-task-run-design-system-pipeline"
+    },
+    {
+      "source": "run-workflow-engine.md",
+      "skill": "aiox-task-run-workflow-engine"
+    },
+    {
+      "source": "run-workflow.md",
+      "skill": "aiox-task-run-workflow"
+    },
+    {
+      "source": "search-mcp.md",
+      "skill": "aiox-task-search-mcp"
+    },
+    {
+      "source": "security-audit.md",
+      "skill": "aiox-task-security-audit"
+    },
+    {
+      "source": "security-scan.md",
+      "skill": "aiox-task-security-scan"
+    },
+    {
+      "source": "session-resume.md",
+      "skill": "aiox-task-session-resume"
+    },
+    {
+      "source": "setup-database.md",
+      "skill": "aiox-task-setup-database"
+    },
+    {
+      "source": "setup-design-system.md",
+      "skill": "aiox-task-setup-design-system"
+    },
+    {
+      "source": "setup-github.md",
+      "skill": "aiox-task-setup-github"
+    },
+    {
+      "source": "setup-llm-routing.md",
+      "skill": "aiox-task-setup-llm-routing"
+    },
+    {
+      "source": "setup-mcp-docker.md",
+      "skill": "aiox-task-setup-mcp-docker"
+    },
+    {
+      "source": "setup-project-docs.md",
+      "skill": "aiox-task-setup-project-docs"
+    },
+    {
+      "source": "shard-doc.md",
+      "skill": "aiox-task-shard-doc"
+    },
+    {
+      "source": "sm-create-next-story.md",
+      "skill": "aiox-task-sm-create-next-story"
+    },
+    {
+      "source": "spec-assess-complexity.md",
+      "skill": "aiox-task-spec-assess-complexity"
+    },
+    {
+      "source": "spec-critique.md",
+      "skill": "aiox-task-spec-critique"
+    },
+    {
+      "source": "spec-gather-requirements.md",
+      "skill": "aiox-task-spec-gather-requirements"
+    },
+    {
+      "source": "spec-research-dependencies.md",
+      "skill": "aiox-task-spec-research-dependencies"
+    },
+    {
+      "source": "spec-write-spec.md",
+      "skill": "aiox-task-spec-write-spec"
+    },
+    {
+      "source": "squad-creator-analyze.md",
+      "skill": "aiox-task-squad-creator-analyze"
+    },
+    {
+      "source": "squad-creator-create.md",
+      "skill": "aiox-task-squad-creator-create"
+    },
+    {
+      "source": "squad-creator-design.md",
+      "skill": "aiox-task-squad-creator-design"
+    },
+    {
+      "source": "squad-creator-download.md",
+      "skill": "aiox-task-squad-creator-download"
+    },
+    {
+      "source": "squad-creator-extend.md",
+      "skill": "aiox-task-squad-creator-extend"
+    },
+    {
+      "source": "squad-creator-list.md",
+      "skill": "aiox-task-squad-creator-list"
+    },
+    {
+      "source": "squad-creator-migrate.md",
+      "skill": "aiox-task-squad-creator-migrate"
+    },
+    {
+      "source": "squad-creator-publish.md",
+      "skill": "aiox-task-squad-creator-publish"
+    },
+    {
+      "source": "squad-creator-sync-ide-command.md",
+      "skill": "aiox-task-squad-creator-sync-ide-command"
+    },
+    {
+      "source": "squad-creator-sync-synkra.md",
+      "skill": "aiox-task-squad-creator-sync-synkra"
+    },
+    {
+      "source": "squad-creator-validate.md",
+      "skill": "aiox-task-squad-creator-validate"
+    },
+    {
+      "source": "story-checkpoint.md",
+      "skill": "aiox-task-story-checkpoint"
+    },
+    {
+      "source": "sync-documentation.md",
+      "skill": "aiox-task-sync-documentation"
+    },
+    {
+      "source": "sync-registry-intel.md",
+      "skill": "aiox-task-sync-registry-intel"
+    },
+    {
+      "source": "tailwind-upgrade.md",
+      "skill": "aiox-task-tailwind-upgrade"
+    },
+    {
+      "source": "test-as-user.md",
+      "skill": "aiox-task-test-as-user"
+    },
+    {
+      "source": "test-validation-task.md",
+      "skill": "aiox-task-test-validation-task"
+    },
+    {
+      "source": "triage-github-issues.md",
+      "skill": "aiox-task-triage-github-issues"
+    },
+    {
+      "source": "undo-last.md",
+      "skill": "aiox-task-undo-last"
+    },
+    {
+      "source": "update-aiox.md",
+      "skill": "aiox-task-update-aiox"
+    },
+    {
+      "source": "update-manifest.md",
+      "skill": "aiox-task-update-manifest"
+    },
+    {
+      "source": "update-source-tree.md",
+      "skill": "aiox-task-update-source-tree"
+    },
+    {
+      "source": "ux-create-wireframe.md",
+      "skill": "aiox-task-ux-create-wireframe"
+    },
+    {
+      "source": "ux-ds-scan-artifact.md",
+      "skill": "aiox-task-ux-ds-scan-artifact"
+    },
+    {
+      "source": "ux-user-research.md",
+      "skill": "aiox-task-ux-user-research"
+    },
+    {
+      "source": "validate-agents.md",
+      "skill": "aiox-task-validate-agents"
+    },
+    {
+      "source": "validate-next-story.md",
+      "skill": "aiox-task-validate-next-story"
+    },
+    {
+      "source": "validate-tech-preset.md",
+      "skill": "aiox-task-validate-tech-preset"
+    },
+    {
+      "source": "validate-workflow.md",
+      "skill": "aiox-task-validate-workflow"
+    },
+    {
+      "source": "verify-subtask.md",
+      "skill": "aiox-task-verify-subtask"
+    },
+    {
+      "source": "waves.md",
+      "skill": "aiox-task-waves"
+    },
+    {
+      "source": "yolo-toggle.md",
+      "skill": "aiox-task-yolo-toggle"
+    }
+  ],
+  "workflows": [
+    {
+      "source": "auto-worktree.yaml",
+      "skill": "aiox-workflow-auto-worktree"
+    },
+    {
+      "source": "brownfield-discovery.yaml",
+      "skill": "aiox-workflow-brownfield-discovery"
+    },
+    {
+      "source": "brownfield-fullstack.yaml",
+      "skill": "aiox-workflow-brownfield-fullstack"
+    },
+    {
+      "source": "brownfield-service.yaml",
+      "skill": "aiox-workflow-brownfield-service"
+    },
+    {
+      "source": "brownfield-ui.yaml",
+      "skill": "aiox-workflow-brownfield-ui"
+    },
+    {
+      "source": "design-system-build-quality.yaml",
+      "skill": "aiox-workflow-design-system-build-quality"
+    },
+    {
+      "source": "development-cycle.yaml",
+      "skill": "aiox-workflow-development-cycle"
+    },
+    {
+      "source": "epic-orchestration.yaml",
+      "skill": "aiox-workflow-epic-orchestration"
+    },
+    {
+      "source": "greenfield-fullstack.yaml",
+      "skill": "aiox-workflow-greenfield-fullstack"
+    },
+    {
+      "source": "greenfield-service.yaml",
+      "skill": "aiox-workflow-greenfield-service"
+    },
+    {
+      "source": "greenfield-ui.yaml",
+      "skill": "aiox-workflow-greenfield-ui"
+    },
+    {
+      "source": "qa-loop.yaml",
+      "skill": "aiox-workflow-qa-loop"
+    },
+    {
+      "source": "README.md",
+      "skill": "aiox-workflow-readme"
+    },
+    {
+      "source": "spec-pipeline.yaml",
+      "skill": "aiox-workflow-spec-pipeline"
+    },
+    {
+      "source": "story-development-cycle.yaml",
+      "skill": "aiox-workflow-story-development-cycle"
+    }
+  ],
+  "hermes_min_version": "0.20.4"
+}

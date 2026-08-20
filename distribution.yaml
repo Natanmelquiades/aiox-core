@@ -1,0 +1,66 @@
+name: aiox-core-hermes
+version: 0.3.0
+adapter_version: 0.3.0
+aiox_version: 5.4.1
+upstream_repository: https://github.com/SynkraAI/aiox-core
+upstream_ref: main
+upstream_commit: 4ef6530ff03b83aea953e4a426f95e012b8b70c5
+hermes_requires: ">=0.20.4"
+author: "SynkraAI AIOX contributors + Hermes adapter contributors"
+license: MIT
+source_layout: upstream-root
+entrypoint: "python scripts/aiox_hermes.py"
+install: "python scripts/install_hermes_aiox_profiles.py --profile aiox-master"
+update_policy: "preview-before-apply"
+collaboration:
+  upstream_remote: https://github.com/SynkraAI/aiox-core.git
+  fork_remote: https://github.com/Natanmelquiades/aiox-core.git
+  main_policy: "mirror upstream; no Hermes-only changes"
+  hermes_branch: hermes
+  pull_request_policy: "generic platform changes may target upstream; Hermes-specific changes stay in adapter"
+distribution_owned:
+  - SOUL.md
+  - config.yaml
+  - distribution.yaml
+  - adapter-manifest.json
+  - projection-manifest.json
+  - LICENSE
+  - CONTRIBUTING.md
+  - AGENTS.md
+  - package.json
+  - package-lock.json
+  - .aiox-core/
+  - bin/
+  - packages/
+  - scripts/
+  - roles/
+  - skills/
+  - skill-bundles/
+user_owned:
+  - .env
+  - auth.json
+  - memories/
+  - sessions/
+  - logs/
+  - workspace/
+  - local/
+  - checkpoints/
+protected_by_installer:
+  - SOUL.md
+  - config.yaml
+  - .env
+  - auth.json
+  - memories/
+  - sessions/
+  - logs/
+forbidden_materialization:
+  - .git/
+  - node_modules/
+  - .claude/
+  - .codex/
+  - .gemini/
+  - .cursor/
+  - .grok/
+  - .antigravity/
+  - coverage/
+  - __pycache__/

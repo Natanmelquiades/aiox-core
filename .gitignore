@@ -366,6 +366,28 @@ docs/guides/aiox-workflows/
 # Local Gemini project rules generated/managed per workspace
 .gemini/rules.md
 
+# Hermes adapter projection (versioned on the `hermes` branch)
+!scripts/aiox_hermes.py
+!scripts/install_hermes_aiox_profiles.py
+!tests/test_aiox_hermes.py
+!roles/
+!roles/**
+!skills/
+!skills/**
+!skill-bundles/
+!skill-bundles/**
+!docs/framework/epics/hermes-adapter/
+!docs/framework/epics/hermes-adapter/**
+!docs/platforms/hermes.md
+!distribution.yaml
+!adapter-manifest.json
+!projection-manifest.json
+!config.yaml
+!SOUL.md
+__pycache__/
+*.pyc
+
+
 # Dependencies (AIOX)
 node_modules
 

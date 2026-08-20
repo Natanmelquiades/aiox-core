@@ -60,6 +60,17 @@ Muitos recursos avançados do AIOX dependem de eventos de ciclo de vida (hooks).
 
 Impactos e mitigação detalhados: `docs/ide-integration.md`.
 
+## Hermes Agent (branch `hermes`)
+
+Este fork mantém o núcleo AIOX upstream e oferece uma projeção Hermes-native
+com perfis, skills, entrypoint natural, diagnóstico, estado resumível e
+instalação segura. Consulte [`docs/platforms/hermes.md`](docs/platforms/hermes.md)
+para instalação, colaboração e remotes `origin`/`upstream`.
+
+A integração Hermes não instala hooks `.claude`, `.codex`, `.gemini` ou Cursor
+automaticamente e preserva configuração, credenciais, memória e sessões do
+usuário.
+
 ## Visão Geral
 
 ### Premissa Arquitetural: CLI First

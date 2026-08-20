@@ -1,0 +1,78 @@
+name: Hermes adapter quality
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [hermes]
+    paths:
+      - 'adapter-manifest.json'
+      - 'distribution.yaml'
+      - 'projection-manifest.json'
+      - 'roles/**'
+      - 'skills/**'
+      - 'skill-bundles/**'
+      - 'scripts/aiox_hermes.py'
+      - 'scripts/install_hermes_aiox_profiles.py'
+      - 'tests/test_aiox_hermes.py'
+      - 'docs/platforms/hermes.md'
+      - '.github/workflows/hermes-adapter.yml'
+  pull_request:
+    paths:
+      - 'adapter-manifest.json'
+      - 'distribution.yaml'
+      - 'projection-manifest.json'
+      - 'roles/**'
+      - 'skills/**'
+      - 'skill-bundles/**'
+      - 'scripts/aiox_hermes.py'
+      - 'scripts/install_hermes_aiox_profiles.py'
+      - 'tests/test_aiox_hermes.py'
+      - 'docs/platforms/hermes.md'
+      - '.github/workflows/hermes-adapter.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  hermes-adapter:
+    name: Hermes adapter / ${{ matrix.os }} / Python ${{ matrix.python-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.11']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Compile adapter Python
+        run: python -m py_compile scripts/aiox_hermes.py scripts/install_hermes_aiox_profiles.py tests/test_aiox_hermes.py
+
+      - name: Run Hermes adapter tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Verify manifest and projection
+        run: |
+          python scripts/aiox_hermes.py manifest --write --json
+          git diff --exit-code -- projection-manifest.json
+          python scripts/aiox_hermes.py doctor --json
+
+      - name: Verify offline provenance
+        run: python scripts/aiox_hermes.py sync-check --offline --json
+
+      - name: Verify non-destructive dry-run
+        shell: bash
+        run: |
+          python scripts/install_hermes_aiox_profiles.py \
+            --profile aiox-master \
+            --dry-run \
+            --home "$RUNNER_TEMP/hermes-home"
+
+      - name: Check whitespace
+        run: git diff --check

@@ -1,0 +1,4 @@
+display:
+  language: pt
+agent:
+  bot_mode_protocol: true
