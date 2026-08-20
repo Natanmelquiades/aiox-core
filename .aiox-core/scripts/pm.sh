@@ -368,12 +368,19 @@ run_dispatch_guard() {
     return 5
   fi
 
+  local node_guard_script="$guard_script"
+  # Native Node on Windows does not reliably accept MSYS /c paths. Convert
+  # only the script argument; keep project paths and user params literal.
+  if command -v cygpath &>/dev/null; then
+    node_guard_script="$(cygpath -w "$guard_script")"
+  fi
+
   AIOX_DISPATCH_AGENT="$AGENT" \
     AIOX_DISPATCH_TASK="$TASK" \
     AIOX_DISPATCH_PARAMS="$PARAMS" \
     AIOX_DISPATCH_CONTEXT="$CONTEXT_FILE" \
     AIOX_PROJECT_ROOT="${AIOX_PROJECT_ROOT:-$(pwd)}" \
-    node "$guard_script" >&2
+    node "$node_guard_script" >&2
 }
 
 # Resolve CLI: CLAUDE_CMD, then claude, then empty.

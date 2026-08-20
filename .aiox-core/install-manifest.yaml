@@ -8,7 +8,7 @@
 # - File types for categorization
 #
 version: 5.4.1
-generated_at: "2026-08-15T18:03:37.513Z"
+generated_at: "2026-08-20T18:06:02.126Z"
 generator: scripts/generate-install-manifest.js
 file_count: 1172
 files:
@@ -1393,7 +1393,7 @@ files:
     type: data
     size: 9590
   - path: data/entity-registry.yaml
-    hash: sha256:092e179bd47166b633ece3ca5998c87c31c0bba95423c977b6d32cfbb7147e2d
+    hash: sha256:e968e74c720a89bc3a9880387c3ecaa52b75955668ab32774772a2a4db7a4425
     type: data
     size: 596246
   - path: data/learned-patterns.yaml
@@ -3517,9 +3517,9 @@ files:
     type: script
     size: 31277
   - path: infrastructure/scripts/pre-dispatch-guard.js
-    hash: sha256:925345f9e1431355edf9627a5a786cea5c9a220a8e5e7a7a8154189b8fb31659
+    hash: sha256:75ac6d23f98b81e042c5feb5ee86db7b2bb062969bdc05e539f45ce1578d7d30
     type: script
-    size: 2124
+    size: 3030
   - path: infrastructure/scripts/project-status-loader.js
     hash: sha256:33d753efad0658a702b08f9422406423a9aceac4c88479622fc660c8e0c8eccb
     type: script
@@ -4585,9 +4585,9 @@ files:
     type: script
     size: 9488
   - path: scripts/pm.sh
-    hash: sha256:dae90035d05e3756bc450526e6b7336625d017552d6809bb00012a2f525cd4b1
+    hash: sha256:96a50be73724e7e21fa1acf56efaf35816eae914216b7af088b8c57a77cbd901
     type: script
-    size: 15958
+    size: 16256
   - path: scripts/README.md
     hash: sha256:4b0aa7d4664919c7d7b241b6451bd97bf07ca66e7e5f6d4b455e12e094d0e6ae
     type: script

@@ -1,72 +1,108 @@
-#!/usr/bin/env node
-/**
- * CLI bridge for automated model dispatch governance.
- */
-
 'use strict';
+
+/**
+ * CLI bridge for the AIOX pre-dispatch governance contract.
+ *
+ * This file is intentionally small: the source of truth remains
+ * `.aiox-core/core/permissions/dispatch-governance.js`. The bridge translates
+ * environment/context input used by pm.sh into that shared contract.
+ */
 
 const fs = require('fs');
 const path = require('path');
 const {
+  DispatchGovernanceError,
   assertDispatchGovernance,
 } = require('../../core/permissions/dispatch-governance');
 
 /**
- * Load the optional JSON context supplied to a model dispatch.
- * @param {string} [filePath] - Context JSON path; empty means no context.
- * @returns {object} Parsed context object.
- * @throws {SyntaxError|Error} When the file cannot be read or parsed.
+ * Load and validate a JSON dispatch context file.
+ * @param {string|undefined} filePath - Context file path.
+ * @returns {object} Parsed context object, or an empty object when omitted.
+ * @throws {Error} When the file is missing, invalid, or not an object.
  */
 function loadContext(filePath) {
   if (!filePath) return {};
-  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  const resolved = path.resolve(filePath);
+  if (!fs.existsSync(resolved)) {
+    throw new Error(`Dispatch context file not found: ${resolved}`);
+  }
+  const parsed = JSON.parse(fs.readFileSync(resolved, 'utf8'));
+  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+    throw new Error('Dispatch context must be a JSON object.');
+  }
+  return parsed;
 }
 
-/**
- * Run the pre-dispatch gate from exact environment variables set by pm.sh.
- *
- * @param {NodeJS.ProcessEnv} [env] - Environment source.
- * @param {string} [projectRoot] - Repository root.
- * @returns {{ budgetCeilingUsd: number, story: object|null, scan: object }} Evidence.
- */
-function run(env = process.env, projectRoot = env.AIOX_PROJECT_ROOT || process.cwd()) {
-  const contextFile = env.AIOX_DISPATCH_CONTEXT || '';
-  const context = loadContext(contextFile);
-  const task = env.AIOX_DISPATCH_TASK || '';
+function buildOptions(env = process.env) {
+  const context = loadContext(env.AIOX_DISPATCH_CONTEXT);
+  const contextIntent = [
+    context.instructions,
+    context.prompt,
+    context.intent,
+  ].filter(Boolean).join('\n');
   const params = env.AIOX_DISPATCH_PARAMS || '';
-  const story =
-    context.storyPath || context.story || context.storyId || context.metadata?.storyPath || params;
-  const intent = JSON.stringify({
-    agent: env.AIOX_DISPATCH_AGENT || '',
-    task,
-    params,
-    context,
-  });
-  return assertDispatchGovernance({
+  return {
     budgetCeilingUsd: env.AIOX_MODEL_BUDGET_CEILING_USD,
-    task,
-    intent,
-    story,
-    projectRoot: path.resolve(projectRoot),
-  });
+    task: env.AIOX_DISPATCH_TASK || '',
+    intent: [params, contextIntent].filter(Boolean).join('\n'),
+    story: context.story || context.storyPath || context.storyId,
+    projectRoot: env.AIOX_PROJECT_ROOT || process.cwd(),
+  };
 }
 
 /**
- * Execute the environment-backed guard and expose a stable CLI exit contract.
- * @returns {void}
+ * Execute the shared AIOX dispatch governance contract.
+ * @param {object} options - Governance options.
+ * @returns {{ok: boolean, evidence?: object, error?: object}} Guard result.
  */
-function main() {
+function run(options = {}) {
   try {
-    const evidence = run();
-    process.stdout.write(
-      `Dispatch governance: OK (budget ceiling USD ${evidence.budgetCeilingUsd.toFixed(2)})\n`,
-    );
+    const evidence = assertDispatchGovernance(options);
+    return { ok: true, evidence };
   } catch (error) {
-    process.stderr.write(`[${error.code || 'DISPATCH_GOVERNANCE'}] ${error.message}\n`);
-    process.exitCode = 5;
+    if (error instanceof DispatchGovernanceError) {
+      return {
+        ok: false,
+        error: {
+          code: error.code,
+          message: error.message,
+          details: error.details,
+        },
+      };
+    }
+    return {
+      ok: false,
+      error: {
+        code: 'DISPATCH_GUARD_ERROR',
+        message: error.message,
+        details: {},
+      },
+    };
   }
 }
 
-if (require.main === module) main();
+/**
+ * Run the guard from process environment variables.
+ * @param {NodeJS.ProcessEnv} [env] - Environment values to translate.
+ * @returns {number} Process-compatible exit code: 0 for allow, 5 for reject.
+ */
+function main(env = process.env) {
+  const result = run(buildOptions(env));
+  if (!result.ok) {
+    process.stderr.write(`${result.error.code}: ${result.error.message}\n`);
+    return 5;
+  }
+  return 0;
+}
 
-module.exports = { loadContext, run, main };
+if (require.main === module) {
+  process.exitCode = main();
+}
+
+module.exports = {
+  loadContext,
+  buildOptions,
+  run,
+  main,
+};
