@@ -15,7 +15,10 @@ class AioxHermesEntrypointTests(unittest.TestCase):
         self.assertEqual(summary["manifest_tasks"], 219)
         self.assertEqual(summary["manifest_workflows"], 15)
         self.assertGreaterEqual(summary["adapter_skill_dirs"], 248)
-        self.assertTrue(any("node_modules" in warning for warning in warnings))
+        self.assertEqual(
+            any("node_modules" in warning for warning in warnings),
+            not aiox_hermes.SOURCE_ROOT.joinpath("node_modules").exists(),
+        )
 
     def test_projection_manifest_has_hashes(self):
         projection = aiox_hermes.build_projection_manifest()
