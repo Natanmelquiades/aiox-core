@@ -6,7 +6,7 @@
 |---|---|
 | Story ID | HERMES-ADAPTER.1 |
 | Epic | HERMES-ADAPTER |
-| Status | In Progress |
+| Status | Ready for Review |
 | Branch | `hermes` |
 | Base | `upstream/main` |
 | Owner | `@devops` / `@dev` |
@@ -46,30 +46,51 @@ sincronização e preparando colaboração via fork GitHub.
 
 ## Implementation Tasks
 
-- [ ] Port adapter projection files from the verified local checkpoint.
-- [ ] Make source-root detection work from the upstream-based fork.
-- [ ] Add Hermes platform documentation and collaboration contract.
-- [ ] Add adapter-specific validation workflow without changing upstream gates.
-- [ ] Execute focused Hermes tests and upstream validation.
-- [ ] Commit the branch with conventional commits.
+- [x] Port adapter projection files from the verified local checkpoint.
+- [x] Make source-root detection work from the upstream-based fork.
+- [x] Add Hermes platform documentation and collaboration contract.
+- [x] Add adapter-specific validation workflow without changing upstream gates.
+- [x] Execute focused Hermes tests and upstream validation.
+- [x] Commit the branch with conventional commits.
 - [ ] Push `hermes` to the personal fork only after all gates pass.
 - [ ] Verify remote branch SHA and report limitations.
 
-## QA Plan
+## QA Evidence
 
-- Hermes unit tests and Python syntax checks.
-- AIOX manifest/agent/workflow/denylist validations.
-- Upstream `node bin/aiox.js validate --detailed`.
-- Native profile install from the fork.
-- Verify no forbidden IDE or secret artifacts enter the profile.
-- Verify `origin` points to the personal fork and `upstream` points to SynkraAI.
+- Fork base verified: `upstream/main == 4ef6530ff03b83aea953e4a426f95e012b8b70c5`.
+- Hermes adapter: 12 unit tests passed; manifest/doctor/offline sync passed.
+- Projection: 12 roles, 219 tasks, 15 workflows, 246 active hashed entries.
+- Native profile smoke: 248 skills, `.aiox-core/`, entrypoint and no IDE/runtime artifacts.
+- Upstream validation: `info/validate` passed at 100%; lint, typecheck and build passed.
+- Upstream Jest: 377 suites passed, 9,038 tests passed, 172 skipped.
+- Upstream agents: 0 errors, 121 warnings from existing dependency declarations.
+- Port denylist, paths, manifest and registry determinism passed.
 
 ## File List
 
-A ser preenchido durante a implementação.
+- `.github/workflows/hermes-adapter.yml`
+- `SOUL.md`
+- `adapter-manifest.json`
+- `config.yaml`
+- `distribution.yaml`
+- `projection-manifest.json`
+- `roles/`
+- `skills/`
+- `skill-bundles/`
+- `scripts/aiox_hermes.py`
+- `scripts/install_hermes_aiox_profiles.py`
+- `tests/test_aiox_hermes.py`
+- `docs/platforms/hermes.md`
+- `docs/framework/epics/hermes-adapter/`
+- `.aiox-core/infrastructure/scripts/pre-dispatch-guard.js`
+- `.aiox-core/scripts/pm.sh`
+- `.aiox-core/data/entity-registry.yaml`
+- `.aiox-core/install-manifest.yaml`
 
 ## Change Log
 
 | Date | Event |
 |---|---|
 | 2026-08-20 | Story criada na branch `hermes` a partir de `upstream/main`. |
+| 2026-08-20 | Adapter Hermes portado para source root upstream; gates locais e upstream passaram. |
+| 2026-08-20 | Correção genérica do pre-dispatch guard e sync Grok aplicados; pronto para push. |
