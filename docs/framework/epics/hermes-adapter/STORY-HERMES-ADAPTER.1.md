@@ -6,7 +6,7 @@
 |---|---|
 | Story ID | HERMES-ADAPTER.1 |
 | Epic | HERMES-ADAPTER |
-| Status | Ready for Review |
+| Status | Done |
 | Branch | `hermes` |
 | Base | `upstream/main` |
 | Owner | `@devops` / `@dev` |
@@ -52,8 +52,8 @@ sincronização e preparando colaboração via fork GitHub.
 - [x] Add adapter-specific validation workflow without changing upstream gates.
 - [x] Execute focused Hermes tests and upstream validation.
 - [x] Commit the branch with conventional commits.
-- [ ] Push `hermes` to the personal fork only after all gates pass.
-- [ ] Verify remote branch SHA and report limitations.
+- [x] Push `hermes` to the personal fork only after all gates pass.
+- [x] Verify remote branch SHA and report limitations.
 
 ## QA Evidence
 
@@ -61,6 +61,8 @@ sincronização e preparando colaboração via fork GitHub.
 - Hermes adapter: 12 unit tests passed; manifest/doctor/offline sync passed.
 - Projection: 12 roles, 219 tasks, 15 workflows, 246 active hashed entries.
 - Native profile smoke: 248 skills, `.aiox-core/`, entrypoint and no IDE/runtime artifacts.
+- Public URL smoke: `hermes profile install https://github.com/Natanmelquiades/aiox-core` passed on isolated profile `aiox-hermes-public`.
+- Remote branch: `origin/hermes` matched local SHA `63a0ea97d75570c278ad05d6f8b9b166a9eeb4bf` before this documentation commit; default branch is `hermes`.
 - Upstream validation: `info/validate` passed at 100%; lint, typecheck and build passed.
 - Upstream Jest: 377 suites passed, 9,038 tests passed, 172 skipped.
 - Upstream agents: 0 errors, 121 warnings from existing dependency declarations.
@@ -94,3 +96,4 @@ sincronização e preparando colaboração via fork GitHub.
 | 2026-08-20 | Story criada na branch `hermes` a partir de `upstream/main`. |
 | 2026-08-20 | Adapter Hermes portado para source root upstream; gates locais e upstream passaram. |
 | 2026-08-20 | Correção genérica do pre-dispatch guard e sync Grok aplicados; pronto para push. |
+| 2026-08-20 | Branch `hermes` publicada no fork; default branch ajustada; instalação pública por URL validada. |
